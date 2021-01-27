@@ -5,6 +5,7 @@ import io.github.andreepdias.pedido.GeraPedido;
 import io.github.andreepdias.pedido.GeradoPedidoHandler;
 import io.github.andreepdias.pedido.Pedido;
 import io.github.andreepdias.pedido.acao.EnviarEmailPedido;
+import io.github.andreepdias.pedido.acao.LogDePedido;
 import io.github.andreepdias.pedido.acao.SalvarPedidoNoBancoDeDados;
 
 import java.math.BigDecimal;
@@ -22,7 +23,8 @@ public class TestesPedidos {
         GeradoPedidoHandler handler = new GeradoPedidoHandler(
                 Arrays.asList(
                         new SalvarPedidoNoBancoDeDados(),
-                        new EnviarEmailPedido()));
+                        new EnviarEmailPedido(),
+                        new LogDePedido()));
         handler.execute(gerador);
     }
 
